@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adnan Ocean Fish Company | Fresh Fish & Quality Seafood</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    /* Global Styles & Color Palette */
+    :root {
+      --primary-navy: #1b1c54;
+      --secondary-blue: #00a2e8;
+      --accent-green: #2ecc71;
+      --light-bg: #f8fafc;
+      --text-dark: #2c3e50;
+      --text-white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      color: var(--text-dark);
+      background-color: var(--light-bg);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header */
+    header {
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-logo {
+      height: 65px;
+      width: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .brand-logo:hover {
+      transform: scale(1.03);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      align-items: center;
+    }
+
+    nav a {
+      font-weight: 600;
+      color: var(--primary-navy);
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--secondary-blue);
+    }
+
+    .header-fb-icon {
+      color: #1877f2;
+      font-size: 1.3rem;
+      transition: transform 0.2s;
+    }
+
+    .header-fb-icon:hover {
+      transform: scale(1.1);
+    }
+
+    /* Hero / Cover Section */
+    .hero {
+      position: relative;
+      background: linear-gradient(rgba(27, 28, 84, 0.85), rgba(13, 14, 46, 0.88)), 
+                  url('01.jpg') no-repeat center center/cover;
+      color: var(--text-white);
+      padding: 7rem 2rem 8rem 2rem;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero tag {
+      background: var(--accent-green);
+      color: white;
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero h2 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+      line-height: 1.2;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 30px;
+      color: #e2e8f0;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background-color: var(--secondary-blue);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #0081ba;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: white;
+      border: 2px solid var(--accent-green);
+      margin-left: 10px;
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--accent-green);
+      transform: translateY(-2px);
+    }
+
+    /* Features Section */
+    .features {
+      max-width: 1200px;
+      margin: -40px auto 4rem auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      text-align: center;
+      border-bottom: 4px solid var(--secondary-blue);
+    }
+
+    .feature-card i {
+      font-size: 2.5rem;
+      color: var(--secondary-blue);
+      margin-bottom: 15px;
+    }
+
+    .feature-card h3 {
+      color: var(--primary-navy);
+      margin-bottom: 10px;
+    }
+
+    /* Section Headers */
+    .section-title {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-title h2 {
+      font-size: 2.2rem;
+      color: var(--primary-navy);
+    }
+
+    .section-title p {
+      color: #666;
+      font-size: 1rem;
+    }
+
+    /* Products Section */
+    .products-section {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .product-card {
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease;
+      border: 1px solid #e2e8f0;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-img-box {
+      width: 100%;
+      height: 280px;
+      overflow: hidden;
+      background: #f1f5f9;
+    }
+
+    .product-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-details {
+      padding: 1.2rem;
+      text-align: center;
+    }
+
+    .product-details h4 {
+      color: var(--primary-navy);
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+    }
+
+    .product-details span {
+      display: inline-block;
+      background: #eef7fc;
+      color: var(--secondary-blue);
+      padding: 4px 12px;
+      border-radius: 15px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* Showcase Section */
+    .showcase-section {
+      background: #ffffff;
+      padding: 4rem 2rem;
+      border-top: 1px solid #e2e8f0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .showcase-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .showcase-card {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      position: relative;
+      background: #000;
+    }
+
+    .showcase-card img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: block;
+      opacity: 0.9;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .showcase-card:hover img {
+      transform: scale(1.04);
+      opacity: 1;
+    }
+
+    .showcase-badge {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(27, 28, 84, 0.92));
+      color: white;
+      padding: 20px;
+    }
+
+    .showcase-badge h4 {
+      font-size: 1.15rem;
+      margin-bottom: 3px;
+    }
+
+    .showcase-badge p {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+    }
+
+    /* Logistics Section */
+    .logistics-banner {
+      background: var(--light-bg);
+      padding: 4rem 2rem;
+    }
+
+    .logistics-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .logistics-img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .logistics-text h3 {
+      font-size: 2rem;
+      color: var(--primary-navy);
+      margin-bottom: 15px;
+    }
+
+    .logistics-text p {
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    /* About Section */
+    .about {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-text h2 {
+      font-size: 2.2rem;
+      color: var(--primary-navy);
+      margin-bottom: 15px;
+    }
+
+    .about-text p {
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    .ceo-box {
+      background: #ffffff;
+      padding: 20px;
+      border-left: 5px solid var(--secondary-blue);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    }
+
+    .ceo-img {
+      width: 85px;
+      height: 85px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--secondary-blue);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .ceo-info h4 {
+      color: var(--primary-navy);
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .ceo-info p {
+      margin: 2px 0 0 0;
+      color: #555;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .ceo-fb-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+      font-size: 0.85rem;
+      color: #1877f2;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .ceo-fb-btn:hover {
+      color: #0e52a5;
+    }
+
+    .main-about-img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+      object-fit: cover;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background-color: #ffffff;
+      padding: 4rem 2rem;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .contact-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .contact-info h3 {
+      font-size: 1.8rem;
+      color: var(--primary-navy);
+      margin-bottom: 20px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .info-item i {
+      font-size: 1.2rem;
+      color: var(--secondary-blue);
+      background: #eef7fc;
+      padding: 12px;
+      border-radius: 50%;
+    }
+
+    .info-item div h4 {
+      color: var(--primary-navy);
+    }
+
+    .info-item div p, .info-item div a {
+      color: #555;
+      display: block;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--primary-navy);
+      color: white;
+      text-align: center;
+      padding: 2.5rem 2rem;
+      border-top: 4px solid var(--accent-green);
+    }
+
+    .footer-fb-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #1877f2;
+      color: white;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 15px 0;
+      transition: background 0.3s;
+    }
+
+    .footer-fb-link:hover {
+      background: #145dbf;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+      color: #a0aec0;
+    }
+
+    @media (max-width: 768px) {
+      .about, .logistics-container { grid-template-columns: 1fr; }
+      .hero h2 { font-size: 2rem; }
+      .nav-container { flex-direction: column; gap: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#home" class="logo">
+        <img src="logo.png" alt="Adnan Ocean Fish Co. Logo" class="brand-logo">
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#outlets">Gallery</a></li>
+          <li><a href="#logistics">Logistics</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <a href="https://www.facebook.com/profile.php?id=100063693547716" target="_blank" title="Official Facebook Page" class="header-fb-icon">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero / Cover Banner -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <tag>Fresh From Ocean To You</tag>
+      <h2>Trusted Cold-Chain Seafood Supply Across KSA</h2>
+      <p>Premium Quality Fish & Seafood • Temperature Controlled Supply (-18°C) • Fast Delivery in Riyadh & KSA</p>
+      <div>
+        <a href="tel:0538717235" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call Now</a>
+        <a href="#contact" class="btn btn-secondary">Get Location</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="services">
+    <div class="feature-card">
+      <i class="fa-solid fa-snowflake"></i>
+      <h3>Cold-Chain Delivery</h3>
+      <p>Advanced refrigerated vehicles ensuring -18°C temperature control for optimal freshness.</p>
+    </div>
+    <div class="feature-card">
+      <i class="fa-solid fa-fish"></i>
+      <h3>Fresh Water & Ocean Fish</h3>
+      <p>Direct supply of fresh ocean fish everyday guaranteeing maximum quality and taste.</p>
+    </div>
+    <div class="feature-card">
+      <i class="fa-solid fa-truck-fast"></i>
+      <h3>Trusted Distribution</h3>
+      <p>Reliable bulk supply and wholesale distribution to commercial & retail clients across KSA.</p>
+    </div>
+  </section>
+
+  <!-- Product Gallery Section -->
+  <section class="products-section" id="products">
+    <div class="section-title">
+      <h2>Premium Packaged Products</h2>
+      <p>Hygienically Processed & Sealed Fresh Seafood Ready for Distribution</p>
+    </div>
+
+    <div class="product-grid">
+      <!-- Item 1: Padma Ilish -->
+      <div class="product-card">
+        <div class="product-img-box">
+          <img src="3.jpg" alt="Padmar Ilish - Adnan Ocean Fish Co.">
+        </div>
+        <div class="product-details">
+          <h4>Padmar Ilish (EID Brand)</h4>
+          <span>Hygienic Vacuum Packed</span>
+        </div>
+      </div>
+
+      <!-- Item 2: Frozen Shrimp Pack (8.jpg) -->
+      <div class="product-card">
+        <div class="product-img-box">
+          <img src="8.jpg" alt="Frozen Shrimp Packet EID Brand">
+        </div>
+        <div class="product-details">
+          <h4>Frozen Cleaned Shrimp</h4>
+          <span>EID Brand Sealed Pack</span>
+        </div>
+      </div>
+
+      <!-- Item 3: Fresh Sea Fish Pack (9.jpg) -->
+      <div class="product-card">
+        <div class="product-img-box">
+          <img src="9.jpg" alt="Fresh Sea Fish Vacuum Pack EID Brand">
+        </div>
+        <div class="product-details">
+          <h4>Seafood White Fish Pack</h4>
+          <span>A-Grade Vacuum Sealed</span>
+        </div>
+      </div>
+
+      <!-- Item 4: Frozen Sea Water Grunter Pack (10.jpg) -->
+      <div class="product-card">
+        <div class="product-img-box">
+          <img src="10.jpg" alt="Frozen Sea Water Fish Grunter Pack">
+        </div>
+        <div class="product-details">
+          <h4>Frozen Sea Water Fish Pack</h4>
+          <span>SFDA Approved (-18°C)</span>
+        </div>
+      </div>
+
+      <!-- Item 5: Packaged Catch -->
+      <div class="product-card">
+        <div class="product-img-box">
+          <img src="4.jpg" alt="Frozen Sea Water Fish">
+        </div>
+        <div class="product-details">
+          <h4>Frozen Sea Water Fish</h4>
+          <span>Quality Controlled Packaging</span>
+        </div>
+      </div>
+
+      <!-- Item 6: Deep Frozen Selection -->
+      <div class="product-card">
+        <div class="product-img-box">
+          <img src="5.jpg" alt="Fresh Sea Water Fish Pack">
+        </div>
+        <div class="product-details">
+          <h4>Premium Sea Catch</h4>
+          <span>Deep Frozen Quality</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Outlet & Live Supply Showcase -->
+  <section class="showcase-section" id="outlets">
+    <div class="section-title">
+      <h2>Live Supply & Store Showcase</h2>
+      <p>Direct Wholesale Operations & Customer Satisfaction in Riyadh</p>
+    </div>
+
+    <div class="showcase-container">
+      <div class="showcase-grid">
+        <!-- Live Catch Showcase (7.jpg) -->
+        <div class="showcase-card">
+          <img src="7.jpg" alt="Huge Big Fish Fresh Catch Supply">
+          <div class="showcase-badge">
+            <h4>Premium Fresh Giant Catch</h4>
+            <p>Guaranteed authentic fresh fish supply from EID Brand</p>
+          </div>
+        </div>
+
+        <div class="showcase-card">
+          <img src="1.jpg" alt="Large Fish Catch Supply">
+          <div class="showcase-badge">
+            <h4>Giant Fresh Fish Supply</h4>
+            <p>Direct wholesale distribution to local markets</p>
+          </div>
+        </div>
+
+        <div class="showcase-card">
+          <img src="2.jpg" alt="Premium Big Fish Catch">
+          <div class="showcase-badge">
+            <h4>Fresh Catch Collection</h4>
+            <p>Guaranteed freshness & high quality standards</p>
+          </div>
+        </div>
+
+        <div class="showcase-card">
+          <img src="6.jpg" alt="Retail & Wholesale Store Outlet">
+          <div class="showcase-badge">
+            <h4>Retail & Outlet Network</h4>
+            <p>Serving top quality seafood directly to customers</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Logistics Showcase Section -->
+  <section class="logistics-banner" id="logistics">
+    <div class="logistics-container">
+      <div>
+        <img src="01.jpg" alt="Adnan Ocean Fish Supply Truck" class="logistics-img">
+      </div>
+      <div class="logistics-text">
+        <h3>Our Fresh Delivery Fleet</h3>
+        <p>At <strong>Adnan Ocean Fish Company</strong>, we operate fully equipped refrigerated trucks to ensure our seafood retains its freshness and nutritional value from ocean transport to your destination.</p>
+        <p>Whether you need fresh water fish or premium seafood supply in Riyadh, our logistics network guarantees hygienic and timely delivery every single time at -18°C.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="about-text">
+      <h2>Welcome to Adnan Ocean Fish Company</h2>
+      <p>We specialize in bringing the finest selection of ocean-fresh fish and premium seafood right to your market. With our commitment to high standards and fresh supply chain management, we ensure you receive top quality every time.</p>
+      
+      <div class="ceo-box">
+        <img src="Mannan - CEO.jfif" alt="Abdul Mannan Ahmed - CEO of Adnan Ocean Fish" class="ceo-img">
+        <div class="ceo-info">
+          <h4>Abdul Mannan Ahmed</h4>
+          <p>CEO of Adnan Ocean Fish Company</p>
+          <a href="https://www.facebook.com/noornobi.mia.5" target="_blank" class="ceo-fb-btn">
+            <i class="fa-brands fa-facebook"></i> Connect on Facebook
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="about-image-wrapper">
+      <img src="fish.jpg" alt="Fresh Fish & Shrimp Assortment" class="main-about-img">
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section" id="contact">
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>Get In Touch</h3>
+        
+        <div class="info-item">
+          <i class="fa-solid fa-phone"></i>
+          <div>
+            <h4>Phone Numbers</h4>
+            <a href="tel:0538717235">0538717235</a>
+            <a href="tel:0592179991">0592179991</a>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <i class="fa-solid fa-envelope"></i>
+          <div>
+            <h4>Email Address</h4>
+            <a href="mailto:mannan9033@gmail.com">mannan9033@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <i class="fa-brands fa-facebook"></i>
+          <div>
+            <h4>Facebook Page</h4>
+            <a href="https://www.facebook.com/profile.php?id=100063693547716" target="_blank">Adnan Ocean Fish Co. Page</a>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <h4>Location Address</h4>
+            <p>3257, As Sahra Street,<br>14623, HalUkadh, Riyadh,<br>Kingdom of Saudi Arabia.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="width: 100%; height: 320px; background-color: #eee; border-radius: 10px; overflow: hidden;">
+        <iframe 
+          src="https://maps.google.com/maps?q=HalUkadh,%20Riyadh,%20Saudi%20Arabia&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div style="margin-bottom: 10px;">
+      <img src="logo.png" alt="Adnan Ocean Fish Co. Logo" style="height: 70px; background: #ffffff; padding: 5px; border-radius: 8px;">
+    </div>
+    <div>
+      <a href="https://www.facebook.com/profile.php?id=100063693547716" target="_blank" class="footer-fb-link">
+        <i class="fa-brands fa-facebook"></i> Follow Us on Facebook
+      </a>
+    </div>
+    <p>&copy; 2026 Adnan Ocean Fish Company. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
